@@ -122,8 +122,10 @@ echo ""
 # --------------------------
 # Recommend reboot if kernel updated
 # --------------------------
-if pacman -Q | grep -q "^linux"; then
-    echo "A kernel package is installed/updated. Reboot recommended."
+if grep -E "(upgraded|installed) (linux|linux-[a-z]+)" /var/log/pacman.log | tail -n 1 | grep -q "$(date +%Y-%m-%d)"; then
+    echo "A kernel package was updated. Reboot recommended."
+else
+    echo "No kernel updates detected. No reboot needed."
 fi
 echo ""
 
