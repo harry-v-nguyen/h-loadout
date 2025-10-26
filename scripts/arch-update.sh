@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Arch Linux system & firmware update script
 # Run as a user with sudo privileges
