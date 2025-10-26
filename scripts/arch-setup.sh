@@ -1,5 +1,10 @@
 #!/bin/bash
 
+set -euo pipefail
+# -e : exit immediately on error
+# -u : treat unset variables as errors
+# -o pipefail : fail if any command in a pipeline fails
+
 # Arch Linux post-install setup script
 # Run as a user with sudo privileges
 
