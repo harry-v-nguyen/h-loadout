@@ -133,29 +133,28 @@ echo "Installing MangoHud..."
 sudo pacman -S --noconfirm mangohud
 
 # --------------------------
-# Auto-complete / Zsh
-# --------------------------
-echo "Installing Zsh and Oh My Zsh..."
-sudo pacman -S --noconfirm zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
-echo "Installing Zsh autosuggestions plugin..."
-git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-
-echo "Installing Pygments for syntax highlighting in Zsh..."
-sudo pacman -S --noconfirm python-pygments
-
-# --------------------------
 # OpenRGB (RGB lighting control)
 # --------------------------
 echo "Installing OpenRGB..."
 yay -S --noconfirm openrgb
 
 # --------------------------
-# Tmux
+# Developer Tools
 # --------------------------
+echo "Installing neovim..."
+sudo pacman -S --noconfirm neovim
 echo "Installing tmux..."
 sudo pacman -S --noconfirm tmux
+echo "Installing wl-clipboard for Wayland clipboard integration..."
+sudo pacman -S --noconfirm wl-clipboard
+echo "Installing nodejs"
+sudo pacman -S --noconfirm nodejs
+echo "Installing npm"
+sudo pacman -S --noconfirm npm
+echo "Installing go"
+sudo pacman -S --noconfirm go
+echo "Installing python"
+sudo pacman -S --noconfirm python
 
 # --------------------------
 # Firmware update utility
