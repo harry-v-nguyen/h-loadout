@@ -131,7 +131,7 @@ return {
 						format = { enable = true },
 					},
 				},
-				pyright = {},
+				-- pyright = {}, -- doesn't work at work
 				gopls = {
 					settings = {
 						gopls = {
