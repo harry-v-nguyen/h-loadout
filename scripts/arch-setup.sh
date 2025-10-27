@@ -147,14 +147,16 @@ echo "Installing tmux..."
 sudo pacman -S --noconfirm tmux
 echo "Installing wl-clipboard for Wayland clipboard integration..."
 sudo pacman -S --noconfirm wl-clipboard
-echo "Installing nodejs"
+echo "Installing nodejs..."
 sudo pacman -S --noconfirm nodejs
-echo "Installing npm"
+echo "Installing npm..."
 sudo pacman -S --noconfirm npm
-echo "Installing go"
+echo "Installing go..."
 sudo pacman -S --noconfirm go
-echo "Installing python"
+echo "Installing python..."
 sudo pacman -S --noconfirm python
+echo "Installing less..."
+sudo pacman -S less
 
 # --------------------------
 # Firmware update utility
