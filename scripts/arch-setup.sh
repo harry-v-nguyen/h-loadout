@@ -157,6 +157,29 @@ echo "Installing python..."
 sudo pacman -S --noconfirm python
 echo "Installing less..."
 sudo pacman -S less
+echo "Installing wget..."
+sudo pacman -S wget
+
+# --------------------------
+# JetBrainsMono Nerd Font
+# --------------------------
+sudo mkdir -p /usr/share/fonts/JetBrainsMono
+sudo wget -P /usr/share/fonts/JetBrainsMono https://github.com/ryanoasis/nerd-fonts/releases/latest/download/JetBrainsMono.zip
+sudo unzip /usr/share/fonts/JetBrainsMono/JetBrainsMono.zip -d /usr/share/fonts/JetBrainsMono
+sudo rm /usr/share/fonts/JetBrainsMono/JetBrainsMono.zip \
+       /usr/share/fonts/JetBrainsMono/OFL.txt \
+       /usr/share/fonts/JetBrainsMono/README.md
+sudo fc-cache -fv
+echo "--------------------------"
+echo "Notes for setting the font in GNOME Console:"
+echo "--------------------------"
+echo "1. Open GNOME Console → Preferences → Text → Font."
+echo "2. Turn off 'Use system font' if enabled."
+echo "3. Look for 'JetBrainsMono Nerd Font' in the font list. (Propo variant may appear as just JetBrainsMono Nerd Font.)"
+echo "4. Select it and confirm."
+echo "5. Optionally, install emoji fallback to display icons like 💤:"
+echo "     sudo pacman -S noto-fonts-emoji"
+echo "6. Restart GNOME Console after changing the font."
 
 # --------------------------
 # Firmware update utility
