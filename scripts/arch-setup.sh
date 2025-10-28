@@ -159,6 +159,8 @@ echo "Installing less..."
 sudo pacman -S less
 echo "Installing wget..."
 sudo pacman -S wget
+echo "Installing ghostty..."
+sudo pacman -S ghostty
 
 # --------------------------
 # JetBrainsMono Nerd Font
