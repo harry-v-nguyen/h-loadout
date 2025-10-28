@@ -2,7 +2,7 @@ vim.g.mapleader = " "
 
 local opts = { noremap = true, silent = true }
 
-vim.keymap.set("n", "<leader>cd", vim.cmd.Ex, opts)
+-- vim.keymap.set("n", "<leader>cd", vim.cmd.Ex, opts) -- replacing this with oil
 
 -- Use system clipboard for all normal operations
 vim.opt.clipboard = "unnamedplus"
