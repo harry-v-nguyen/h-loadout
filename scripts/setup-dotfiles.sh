@@ -2,27 +2,28 @@
 set -e
 
 # ----------------------------------------
-# Dotfiles setup script (Bash & Neovim)
+# Dotfiles setup script
 # Assumes repo root if no path is provided
 # ----------------------------------------
 
-DEFAULT_REPO="$(pwd)/configurations"
-REPO="${1:-$DEFAULT_REPO}"
+DEFAULT_CONFIG="$(pwd)/configurations"
+CONFIG="${1:-$DEFAULT_CONFIG}"
 
 BASHRC_TARGET="$HOME/.bashrc"
 NVIM_TARGET="$HOME/.config/nvim"
+GHOSTTY_TARGET="$HOME/.config/ghostty"
 BACKUP_DIR="$HOME/.config/backup"
 
 # ----------------------------------------
 # Safety check
 # ----------------------------------------
 echo "Checking configuration path..."
-if [[ ! -d "$REPO" ]]; then
-    echo "Error: Provided path '$REPO' does not exist."
+if [[ ! -d "$CONFIG" ]]; then
+    echo "Error: Provided path '$CONFIG' does not exist."
     echo "Tip: Run this script from the root of the repository without parameters."
     exit 1
 fi
-echo "Using repository path: $REPO"
+echo "Using repository path: $CONFIG"
 echo ""
 
 # ----------------------------------------
@@ -44,26 +45,35 @@ if [[ -d "$NVIM_TARGET" ]]; then
 else
     echo "No existing nvim config found."
 fi
+
+if [[ -d "$GHOSTTY_TARGET" ]]; then
+    mv "$GHOSTTY_TARGET" "$BACKUP_DIR/ghostty.backup" 2>/dev/null || true
+    echo "Backed up existing ghostty config."
+else
+    echo "No existing ghostty config found."
+fi
 echo ""
 
 # ----------------------------------------
 # Create symlinks
 # ----------------------------------------
 echo "Creating symlinks..."
-ln -sf "$REPO/.bashrc" "$BASHRC_TARGET"
-ln -sf "$REPO/nvim" "$NVIM_TARGET"
+ln -sf "$CONFIG/.bashrc" "$BASHRC_TARGET"
+ln -sf "$CONFIG/nvim" "$NVIM_TARGET"
+ln -sf "$CONFIG/ghostty" "$GHOSTTY_TARGET"
 
 echo ""
 echo "Symlinks created successfully!"
-echo "	~/.bashrc → $REPO/.bashrc"
-echo "	~/.config/nvim → $REPO/nvim"
+echo "	~/.bashrc → $CONFIG/.bashrc"
+echo "	~/.config/nvim → $CONFIG/nvim"
+echo "	~/.config/ghostty → $CONFIG/ghostty"
 echo ""
 
 # ----------------------------------------
 # Post-checks
 # ----------------------------------------
-if [[ -L "$BASHRC_TARGET" && -L "$NVIM_TARGET" ]]; then
-    echo "Verification complete: both symlinks are valid."
+if [[ -L "$BASHRC_TARGET" && -L "$NVIM_TARGET" ]&& -L "$GHOSTTY_TARGET" ]; then
+    echo "Verification complete: all symlinks are valid."
 else
     echo "Warning: One or more symlinks may not have been created correctly."
 fi
