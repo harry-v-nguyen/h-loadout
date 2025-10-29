@@ -17,6 +17,9 @@ return {
 						vim.keymap.set("n", keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
 					end
 
+					-- -------------------------
+					-- Keymaps
+					-- -------------------------
 					map("gd", require("telescope.builtin").lsp_definitions, "Goto Definition")
 					map("gr", require("telescope.builtin").lsp_references, "Goto References")
 					map("gI", require("telescope.builtin").lsp_implementations, "Goto Implementation")
@@ -28,7 +31,9 @@ return {
 					map("gh", vim.lsp.buf.hover, "Hover Documentation")
 					map("gD", vim.lsp.buf.declaration, "Goto Declaration")
 
+					-- -------------------------
 					-- Highlight references under cursor
+					-- -------------------------
 					local client = vim.lsp.get_client_by_id(event.data.client_id)
 					if client and client.server_capabilities.documentHighlightProvider then
 						local highlight_augroup = vim.api.nvim_create_augroup("lsp_highlight", { clear = false })
@@ -51,11 +56,36 @@ return {
 						})
 					end
 
+					-- -------------------------
 					-- Inlay hints toggle
+					-- -------------------------
 					if client and client.server_capabilities.inlayHintProvider and vim.lsp.inlay_hint then
 						map("<leader>th", function()
 							vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 						end, "Toggle Inlay Hints")
+					end
+
+					-- -------------------------
+					-- Organize Go imports on save
+					-- -------------------------
+					if vim.bo[event.buf].filetype == "go" then
+						vim.api.nvim_create_autocmd("BufWritePre", {
+							buffer = event.buf,
+							callback = function()
+								local params = vim.lsp.util.make_range_params()
+								params.context = { only = { "source.organizeImports" } }
+								local results = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 1000)
+								for _, res in pairs(results or {}) do
+									for _, r in pairs(res.result or {}) do
+										if r.edit then
+											vim.lsp.util.apply_workspace_edit(r.edit, "utf-16")
+										else
+											vim.lsp.buf.execute_command(r.command)
+										end
+									end
+								end
+							end,
+						})
 					end
 				end,
 			})
@@ -102,7 +132,17 @@ return {
 					},
 				},
 				pyright = {},
-				gopls = {},
+				gopls = {
+					settings = {
+						gopls = {
+							analyses = {
+								unusedparams = true,
+							},
+							staticcheck = true,
+							completeUnimported = true,
+						},
+					},
+				},
 				jsonls = {
 					settings = {
 						json = {
@@ -141,6 +181,13 @@ return {
 						require("lspconfig")[server_name].setup(server)
 					end,
 				},
+			})
+
+			vim.diagnostic.config({
+				virtual_text = true,
+				signs = true,
+				underline = true,
+				update_in_insert = false,
 			})
 		end,
 	},
