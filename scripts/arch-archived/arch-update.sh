@@ -135,4 +135,3 @@ echo ""
 echo "System and firmware update checks completed!"
 echo "Review firmware updates manually as instructed above."
 echo ""
-

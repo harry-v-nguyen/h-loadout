@@ -197,4 +197,3 @@ echo "Setup script completed!"
 echo "Review any manual steps (e.g., NVIDIA reboot, Oh My Zsh setup)."
 echo "Enjoy your Arch environment!"
 echo ""
-
