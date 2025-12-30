@@ -6,6 +6,7 @@ echo -e "Installing specified packages...\n"
 
 ./scripts/omarchy/install/install-bash-completion.sh
 ./scripts/omarchy/install/install-go.sh
+./scripts/omarchy/install/install-lsof.sh
 ./scripts/omarchy/install/install-opencode.sh
 ./scripts/omarchy/install/install-stow.sh
 ./scripts/omarchy/install/install-tmux.sh
