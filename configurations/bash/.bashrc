@@ -6,7 +6,9 @@
 [[ $- != *i* ]] && return
 
 # Aliases
+alias cls='clear'
 alias ls='ls --color=auto'
+alias dir='ls'
 alias grep='grep --color=auto'
 alias vim='nvim'
 alias srcbash='source ~/.bashrc && echo ".bashrc reloaded!"'

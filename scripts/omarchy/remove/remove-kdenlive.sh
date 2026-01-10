@@ -2,6 +2,8 @@
 
 set -e
 
+source ./scripts/omarchy/remove/utils.sh
+
 echo "Removing kdenlive..."
 
-yay -Rns --noconfirm --needed kdenlive
+remove_pkg "kdenlive"

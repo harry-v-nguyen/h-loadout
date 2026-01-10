@@ -2,6 +2,8 @@
 
 set -e
 
+source ./scripts/omarchy/remove/utils.sh
+
 echo "Removing obsidian..."
 
-yay -Rns --noconfirm --needed obsidian
+remove_pkg "obsidian"

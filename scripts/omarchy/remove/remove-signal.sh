@@ -2,6 +2,8 @@
 
 set -e
 
+source ./scripts/omarchy/remove/utils.sh
+
 echo "Removing signal..."
 
-yay -Rns --noconfirm --needed signal
+remove_pkg "signal"

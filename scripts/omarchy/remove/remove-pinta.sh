@@ -2,6 +2,8 @@
 
 set -e
 
+source ./scripts/omarchy/remove/utils.sh
+
 echo "Removing pinta..."
 
-yay -Rns --noconfirm --needed pinta
+remove_pkg "pinta"

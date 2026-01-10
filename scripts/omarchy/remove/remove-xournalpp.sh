@@ -2,6 +2,8 @@
 
 set -e
 
+source ./scripts/omarchy/remove/utils.sh
+
 echo "Removing xournalpp..."
 
-yay -Rns --noconfirm --needed xournalpp
+remove_pkg "xournalpp"

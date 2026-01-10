@@ -7,9 +7,10 @@ echo "Setting up dotfiles..."
 # bash
 target="$HOME/.bashrc"
 [ -e "$target" ] && [ ! -L "$target" ] && mv "$target" "$target.bak"
+source $HOME/.bashrc
 
 # desktop background
-target="$HOME/.config/omarchy/current/theme/backgrounds/Abstract Background 3.png"
+target="$HOME/.config/omarchy/backgrounds/hackerman/Abstract Background 3.png"
 [ -e "$target" ] || ln -s "$PWD/images/Abstract Background 3.png" "$target"
 
 # ghostty

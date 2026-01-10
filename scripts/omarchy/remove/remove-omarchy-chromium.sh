@@ -2,6 +2,8 @@
 
 set -e
 
+source ./scripts/omarchy/remove/utils.sh
+
 echo "Removing omarchy-chromium..."
 
-yay -Rns --noconfirm --needed omarchy-chromium
+remove_pkg "omarchy-chromium"

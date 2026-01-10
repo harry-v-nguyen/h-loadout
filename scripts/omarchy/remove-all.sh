@@ -14,7 +14,7 @@ echo -e "Removing specified packages...\n"
 ./scripts/omarchy/remove/remove-pinta.sh
 ./scripts/omarchy/remove/remove-signal.sh
 ./scripts/omarchy/remove/remove-typora.sh
-# ./scripts/omarchy/remove/remove-web-apps.sh
+./scripts/omarchy/remove/remove-web-apps.sh
 ./scripts/omarchy/remove/remove-xournalpp.sh
 
 echo "Finished removing specified packages..."

@@ -2,6 +2,8 @@
 
 set -e
 
+source ./scripts/omarchy/remove/utils.sh
+
 echo "Removing typora..."
 
-yay -Rns --noconfirm --needed typora
+remove_pkg "typora"

@@ -2,6 +2,8 @@
 
 set -e
 
+source ./scripts/omarchy/remove/utils.sh
+
 echo "Removing alacritty..."
 
-yay -Rns --noconfirm --needed alacritty
+remove_pkg "alacritty"

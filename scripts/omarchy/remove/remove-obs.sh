@@ -2,6 +2,8 @@
 
 set -e
 
-echo "Removing obs..."
+source ./scripts/omarchy/remove/utils.sh
 
-yay -Rns --noconfirm --needed obs
+echo "Removing obs-studio..."
+
+remove_pkg "obs-studio"
