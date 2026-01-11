@@ -10,6 +10,7 @@ target="$HOME/.bashrc"
 
 # desktop background
 target="$HOME/.config/omarchy/backgrounds/hackerman/Abstract Background 3.png"
+mkdir -p "$(dirname "$target")"
 [ -e "$target" ] || ln -s "$PWD/images/Abstract Background 3.png" "$target"
 
 # ghostty
