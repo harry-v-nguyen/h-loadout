@@ -7,7 +7,6 @@ echo "Setting up dotfiles..."
 # bash
 target="$HOME/.bashrc"
 [ -e "$target" ] && [ ! -L "$target" ] && mv "$target" "$target.bak"
-source $HOME/.bashrc
 
 # desktop background
 target="$HOME/.config/omarchy/backgrounds/hackerman/Abstract Background 3.png"
@@ -48,3 +47,6 @@ target="$HOME/.config/waybar/config.jsonc"
 [ -e "$target" ] && [ ! -L "$target" ] && mv "$target" "$target.bak"
 
 stow -d configurations -t "$HOME" $(ls configurations)
+
+# source bash
+source $HOME/.bashrc
