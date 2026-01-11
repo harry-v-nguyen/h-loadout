@@ -57,7 +57,8 @@ background = "#000000"
 theme = "Catppuccin Mocha"
 
 font-family = "JetBrainsMono Nerd Font Mono"
-font-size = 16
+font-size = 16 # Desktop
+font-size = 12 # Laptop
 font-style = Regular
 
 keybind = ctrl+shift+c=copy_to_clipboard
