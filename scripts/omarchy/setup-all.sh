@@ -10,3 +10,6 @@ echo -e "Setting up configurations...\n"
 ./scripts/omarchy/setup/setup-dotfiles.sh
 
 echo "Finished setting up configurations..."
+
+# reboot
+~/.local/share/omarchy/bin/omarchy-cmd-reboot
