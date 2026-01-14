@@ -8,6 +8,7 @@ echo -e "Installing specified packages...\n"
 ./scripts/omarchy/install/install-go.sh
 ./scripts/omarchy/install/install-lsof.sh
 ./scripts/omarchy/install/install-opencode.sh
+./scripts/omarchy/install/install-starship.sh
 ./scripts/omarchy/install/install-stow.sh
 ./scripts/omarchy/install/install-telegram.sh
 ./scripts/omarchy/install/install-tmux.sh

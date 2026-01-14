@@ -6,4 +6,4 @@ echo "Installing go..."
 
 sudo dnf install -y golang
 
-go install golang.org/x/tools/gopls@latest
+go install golang.org/x/tools/gopls@v0.20.0
