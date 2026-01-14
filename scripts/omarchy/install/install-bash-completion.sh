@@ -4,4 +4,4 @@ set -e
 
 echo "Installing bash-completion..."
 
-yay -S --noconfirm --needed bash-completion
+yay -Syu --noconfirm --needed bash-completion

@@ -4,4 +4,4 @@ set -e
 
 echo "Installing veracrypt..."
 
-yay -S --noconfirm --needed veracrypt
+yay -Syu --noconfirm --needed veracrypt

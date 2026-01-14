@@ -4,4 +4,4 @@ set -e
 
 echo "Installing stow..."
 
-yay -S --noconfirm --needed stow
+yay -Syu --noconfirm --needed stow

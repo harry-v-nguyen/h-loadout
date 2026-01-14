@@ -4,4 +4,4 @@ set -e
 
 echo "Installing tmux..."
 
-yay -S --noconfirm --needed tmux
+yay -Syu --noconfirm --needed tmux

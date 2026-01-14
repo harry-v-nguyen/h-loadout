@@ -4,4 +4,4 @@ set -e
 
 echo "Installing lsof..."
 
-yay -S --noconfirm --needed lsof
+yay -Syu --noconfirm --needed lsof
