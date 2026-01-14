@@ -22,3 +22,6 @@ target="$HOME/.tmux.conf"
 [ -e "$target" ] && [ ! -L "$target" ] && mv "$target" "$target.bak"
 
 stow -d configurations -t "$HOME" bash nvim starship tmux
+
+# source bash
+source $HOME/.bashrc
