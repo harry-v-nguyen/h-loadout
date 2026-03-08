@@ -20,3 +20,6 @@ vim.keymap.set("n", "<leader>P", '"aP', opts)
 -- beginning and end of line
 vim.keymap.set({ "n", "v", "o" }, "<leader>i", "0", opts)
 vim.keymap.set({ "n", "v", "o" }, "<leader>a", "$", opts)
+
+-- open up in-line syntax messsages
+vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
