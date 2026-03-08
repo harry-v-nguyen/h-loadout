@@ -61,7 +61,7 @@ font-family = "JetBrainsMono Nerd Font Mono"
 # Desktop
 font-size = 16
 # Laptop
-font-size = 12
+# font-size = 14
 
 font-style = Regular
 
@@ -79,3 +79,6 @@ cursor-style = "block"
 cursor-style-blink = false
 
 shell-integration-features = no-cursor,ssh-env
+
+# Fix general slowness on hyprland (https://github.com/ghostty-org/ghostty/discussions/3224)
+async-backend = epoll
