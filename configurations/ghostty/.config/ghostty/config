@@ -80,5 +80,7 @@ cursor-style-blink = false
 
 shell-integration-features = no-cursor,ssh-env
 
+keybind = shift+enter=text:\x1b\r
+
 # Fix general slowness on hyprland (https://github.com/ghostty-org/ghostty/discussions/3224)
 async-backend = epoll

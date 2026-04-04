@@ -22,4 +22,19 @@ vim.keymap.set({ "n", "v", "o" }, "<leader>i", "0", opts)
 vim.keymap.set({ "n", "v", "o" }, "<leader>a", "$", opts)
 
 -- open up in-line syntax messsages
-vim.keymap.set("n", "<leader>d", vim.diagnostic.open_float, opts)
+vim.keymap.set("n", "<leader>d", function()
+  local float_buf, _ = vim.diagnostic.open_float()
+  
+  if not float_buf or not vim.api.nvim_buf_is_valid(float_buf) then return end
+  
+  vim.defer_fn(function()
+    local lines = vim.api.nvim_buf_get_lines(float_buf, 0, -1, false)
+    if #lines > 0 then
+      local text = table.concat(lines, "\n")
+      vim.fn.setreg("+", text)
+      -- 5. Close the buffer (and its window) immediately after copying
+      vim.api.nvim_buf_delete(float_buf, { force = true })
+      print("Diagnostic copied and window closed!")
+    end
+  end, 10)
+end, opts)
