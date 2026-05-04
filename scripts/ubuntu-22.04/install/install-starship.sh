@@ -4,4 +4,4 @@ set -e
 
 echo "Installing starship..."
 
-sudo apt update && sudo apt install -y starship
+sudo snap install --edge starship

@@ -11,6 +11,7 @@ alias ls='ls --color=auto'
 alias dir='ls'
 alias grep='grep --color=auto'
 alias vim='nvim'
+alias rmswps='rm -fr ~/.local/state/nvim/swap'
 alias srcbash='source ~/.bashrc && echo ".bashrc reloaded!"'
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -26,7 +27,7 @@ parse_git_branch() {
 }
 
 # Prompt
-PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]: \[\033[01;34m\]\w \[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\n\$ '
+PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;35m\](\@)\[\033[00m\]: \[\033[01;34m\]\w \[\033[01;31m\]$(parse_git_branch)\[\033[00m\]\n\$ '
 
 # Tab completion / Readline enhancements
 bind 'set completion-ignore-case on'
