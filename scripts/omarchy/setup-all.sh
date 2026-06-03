@@ -13,4 +13,4 @@ echo -e "Setting up configurations...\n"
 echo "Finished setting up configurations..."
 
 # reboot
-~/.local/share/omarchy/bin/omarchy-cmd-reboot
+~/.local/share/omarchy/bin/omarchy-system-reboot

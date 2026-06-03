@@ -2,8 +2,7 @@
 
 set -e
 
-source ./scripts/omarchy/remove/utils.sh
-
-echo "Removing aether..."
-
-remove_pkg "aether"
+if ~/.local/share/omarchy/bin/omarchy-pkg-present "aether"; then
+    echo "Removing aether..."
+    ~/.local/share/omarchy/bin/omarchy-pkg-drop "aether"
+fi

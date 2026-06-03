@@ -4,4 +4,4 @@ set -e
 
 echo "Installing stow..."
 
-yay -Syu --noconfirm --needed stow
+~/.local/share/omarchy/bin/omarchy-pkg-add "stow"

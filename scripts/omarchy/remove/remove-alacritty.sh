@@ -2,8 +2,13 @@
 
 set -e
 
-source ./scripts/omarchy/remove/utils.sh
+if ~/.local/share/omarchy/bin/omarchy-pkg-present "alacritty"; then
+    echo "Removing alacritty..."
+    ~/.local/share/omarchy/bin/omarchy-pkg-drop "alacritty"
 
-echo "Removing alacritty..."
+    # Strip alacritty entries from the XDG terminal layout list if the file exists
+    if [ -f "$HOME/.config/xdg-terminals.list" ]; then
+        sed -i '/^Alacritty/d' "$HOME/.config/xdg-terminals.list"
+    fi
+fi
 
-remove_pkg "alacritty"

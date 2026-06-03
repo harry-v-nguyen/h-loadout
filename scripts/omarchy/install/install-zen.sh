@@ -4,6 +4,6 @@ set -e
 
 echo "Installing zen-browser-bin..."
 
-yay -Syu --noconfirm --needed zen-browser-bin
+~/.local/share/omarchy/bin/omarchy-pkg-aur-add "zen-browser-bin"
 
 xdg-settings set default-web-browser zen.desktop

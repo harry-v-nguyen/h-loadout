@@ -2,8 +2,7 @@
 
 set -e
 
-source ./scripts/omarchy/remove/utils.sh
-
-echo "Removing kdenlive..."
-
-remove_pkg "kdenlive"
+if ~/.local/share/omarchy/bin/omarchy-pkg-present "kdenlive"; then
+    echo "Removing kdenlive..."
+    ~/.local/share/omarchy/bin/omarchy-pkg-drop "kdenlive"
+fi

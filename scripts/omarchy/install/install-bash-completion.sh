@@ -4,4 +4,4 @@ set -e
 
 echo "Installing bash-completion..."
 
-yay -Syu --noconfirm --needed bash-completion
+~/.local/share/omarchy/bin/omarchy-pkg-add "bash-completion"

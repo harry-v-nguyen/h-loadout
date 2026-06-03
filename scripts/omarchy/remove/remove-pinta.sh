@@ -2,8 +2,7 @@
 
 set -e
 
-source ./scripts/omarchy/remove/utils.sh
-
-echo "Removing pinta..."
-
-remove_pkg "pinta"
+if ~/.local/share/omarchy/bin/omarchy-pkg-present "pinta"; then
+    echo "Removing pinta..."
+    ~/.local/share/omarchy/bin/omarchy-pkg-drop "pinta"
+fi

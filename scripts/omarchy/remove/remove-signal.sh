@@ -2,8 +2,7 @@
 
 set -e
 
-source ./scripts/omarchy/remove/utils.sh
-
-echo "Removing signal..."
-
-remove_pkg "signal"
+if ~/.local/share/omarchy/bin/omarchy-pkg-present "signal"; then
+    echo "Removing signal..."
+    ~/.local/share/omarchy/bin/omarchy-pkg-drop "signal"
+fi

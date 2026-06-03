@@ -2,8 +2,7 @@
 
 set -e
 
-source ./scripts/omarchy/remove/utils.sh
-
-echo "Removing typora..."
-
-remove_pkg "typora"
+if ~/.local/share/omarchy/bin/omarchy-pkg-present "typora"; then
+    echo "Removing typora..."
+    ~/.local/share/omarchy/bin/omarchy-pkg-drop "typora"
+fi

@@ -4,4 +4,4 @@ set -e
 
 echo "Installing veracrypt..."
 
-yay -Syu --noconfirm --needed veracrypt
+~/.local/share/omarchy/bin/omarchy-pkg-add "veracrypt"

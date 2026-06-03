@@ -4,4 +4,4 @@ set -e
 
 echo "Installing starship..."
 
-yay -Syu --noconfirm --needed starship
+~/.local/share/omarchy/bin/omarchy-pkg-add "starship"

@@ -2,8 +2,7 @@
 
 set -e
 
-source ./scripts/omarchy/remove/utils.sh
-
-echo "Removing obsidian..."
-
-remove_pkg "obsidian"
+if ~/.local/share/omarchy/bin/omarchy-pkg-present "obsidian"; then
+    echo "Removing obsidian..."
+    ~/.local/share/omarchy/bin/omarchy-pkg-drop "obsidian"
+fi

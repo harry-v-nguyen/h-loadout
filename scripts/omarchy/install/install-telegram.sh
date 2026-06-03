@@ -4,4 +4,4 @@ set -e
 
 echo "Installing telegram-desktop..."
 
-yay -Syu --noconfirm --needed telegram-desktop
+~/.local/share/omarchy/bin/omarchy-pkg-add "telegram-desktop"

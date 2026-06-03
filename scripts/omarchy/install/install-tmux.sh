@@ -4,4 +4,4 @@ set -e
 
 echo "Installing tmux..."
 
-yay -Syu --noconfirm --needed tmux
+~/.local/share/omarchy/bin/omarchy-pkg-add "tmux"

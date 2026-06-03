@@ -2,8 +2,7 @@
 
 set -e
 
-source ./scripts/omarchy/remove/utils.sh
-
-echo "Removing xournalpp..."
-
-remove_pkg "xournalpp"
+if ~/.local/share/omarchy/bin/omarchy-pkg-present "xournalpp"; then
+    echo "Removing xournalpp..."
+    ~/.local/share/omarchy/bin/omarchy-pkg-drop "xournalpp"
+fi

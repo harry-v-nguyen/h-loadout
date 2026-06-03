@@ -4,6 +4,6 @@ set -e
 
 echo "Installing go..."
 
-yay -Syu --noconfirm --needed go
+~/.local/share/omarchy/bin/omarchy-pkg-add "go"
 
 go install golang.org/x/tools/gopls@latest

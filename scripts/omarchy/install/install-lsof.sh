@@ -4,4 +4,4 @@ set -e
 
 echo "Installing lsof..."
 
-yay -Syu --noconfirm --needed lsof
+~/.local/share/omarchy/bin/omarchy-pkg-add "lsof"
