@@ -13,6 +13,6 @@ echo -e "Installing specified packages...\n"
 ./scripts/omarchy/install/install-telegram.sh
 ./scripts/omarchy/install/install-tmux.sh
 ./scripts/omarchy/install/install-veracrypt.sh
-./scripts/omarchy/install/install-zen.sh
+./scripts/omarchy/install/install-zen-browser-bin.sh
 
 echo "Finished installing specified packages..."
